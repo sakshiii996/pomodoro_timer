@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Ribeye&display=swap" rel="stylesheet">
+    <title>Pomodoro Timer</title>
+</head>
+
+<body>
+    <div class="mainbox">
+    <div class="timerbox">
+     <audio id="alarmSound" src="sound\alarmSound.mp3"></audio>
+    
+        <div class="timer">
+            <div class="motivationpanel"></div>
+            <div class="timerhead">
+                <button id="Pomodorobtn">Pomodoro</button>
+                <button id="Shortbtn">Short Break</button>
+                <button id="Longbtn">Long Break</button>
+            </div>
+            <div class="timerpanel">
+                <p id="timedisplay">25:00</p>
+            </div>
+            <div class="timerfoot">
+                <button id="start">Start</button>
+                <button id="stop">Stop</button>
+                <button id="reset">Reset</button>
+            </div>
+             <button id="Stop-btn" style="display:none ;">Stop Alarm</button>
+            <div class="streakpanel">
+                <p>Streak</p>
+                <p class="streakupdate">NO.</p>
+            </div>
+        </div>
+    </div>
+    <div class="sidepanel">
+        <div class="taskpanel">
+            <p>TASK</p>
+            <div class="addtaskContainer">
+                <input type="text" placeholder="Add Task" id="inputBox">
+                <button id="add" onclick="addTask()">Add</button>
+            </div>
+            <ul id="listContainer">
+                <!-- <li class="checked">Task 1</li>
+                <li>Task 1</li>
+                <li>Task 1</li> -->
+            </ul>
+        </div>
+        <div class="notespanel">
+             <p>NOTES</p>
+            <div class="addtaskContainer">
+                <input type="text" placeholder="Add notes" id="noteBox">
+                <button id="add" onclick="addNote()">Add</button>
+            </div>
+            <ul id="noteslistContainer">
+                <!-- <li class="checked">Task 1</li>
+                <li>Task 1</li>
+                <li>Task 1</li> -->
+            </ul>
+        </div>
+    </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
