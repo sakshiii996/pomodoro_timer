@@ -22,6 +22,7 @@ const alarmSound = document.getElementById("alarmSound");
 let timeleft = 1500;
 let interval;
 
+// updates timer //
 const updatetimer = () => {
     const minutes = Math.floor(timeleft / 60);
     const seconds = timeleft % 60;
@@ -33,7 +34,7 @@ const updatetimer = () => {
 let streakCount = 0;
 const streakEmoji = "🎯";
 
-
+// starts timer //
 const startTimer = () => {
     if (interval) return;
     interval = setInterval(() => {
@@ -65,6 +66,7 @@ document.getElementById("Stop-btn").addEventListener("click" , ()=> {
     document.querySelector(".timerbox").classList.remove("show-stop");
 })
 
+// stops timer //
 
 const stopTimer = () => {
     clearInterval(interval);
@@ -72,6 +74,7 @@ const stopTimer = () => {
     timeDisplay.classList.add("blink");
 
 };
+// Reset timer //
 const resetTimer = () => {
     clearInterval(interval);
 
@@ -81,18 +84,21 @@ const resetTimer = () => {
     updatetimer();
     timeDisplay.classList.remove("blink");
 };
+// pomodoro button //
 Pomodorobtn.addEventListener("click", () => {
  clearInterval(interval);
  timeleft=1500;
  updatetimer();
 });
 
+// short break button //
 Shortbtn.addEventListener("click", () => {
  clearInterval(interval);
  timeleft=300;
  updatetimer();
 });
 
+// long break button //
 Longbtn.addEventListener("click", () => {
  clearInterval(interval);
  timeleft=900;
@@ -106,6 +112,7 @@ const motivationQuotes = [
     "Small progress is still progress.",
 ];
 
+// Generate random Quotes //
 const showrandomQuote = () => {
 const randomQuote = motivationQuotes[Math.floor(Math.random() * motivationQuotes.length )];
  motivationpanel.textContent = randomQuote ;
@@ -117,6 +124,7 @@ reset.addEventListener("click", resetTimer);
 updatetimer();
 showrandomQuote();
 
+// Adds Tasks //
 function addTask() {
     if(inputBox.value === " "){
         alert("Please write something");
@@ -133,6 +141,7 @@ function addTask() {
     savetaskData();
 }
 
+// Adds Notes //
 function addNote() {
     if(noteBox.value === " "){
         alert("Please write something");
@@ -176,6 +185,7 @@ function savetaskData() {
     localStorage.setItem("task", listContainer.innerHTML);
 }
 
+// Stores task in local storage //
 function showTask() {
     listContainer.innerHTML = localStorage.getItem("task") || "" ;
 }
@@ -184,8 +194,10 @@ function savenotesData() {
     localStorage.setItem("notes", noteslistContainer.innerHTML);
 }
 
+// Stores notes in local storage //
 function showNote() {
     noteslistContainer.innerHTML = localStorage.getItem("notes") || "";
 }
 showTask();
+
 showNote();
