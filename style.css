@@ -350,7 +350,7 @@ ul li.checked {
 }
 
 ul li.checked::before {
-    background-image: url(images/checked.png);
+    background-image: url(https://github.com/sakshiii996/pomodoro_timer/blob/main/checked.png?raw=true);
 }
 
 ul li span {
@@ -369,4 +369,5 @@ ul li span {
 ul li span:hover {
     background-color: rgb(98, 132, 180);
 }
+
 
