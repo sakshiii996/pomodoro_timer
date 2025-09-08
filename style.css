@@ -333,7 +333,7 @@ ul li {
 
 ul li::before {
     content: '';
-    background-image: url(images/unchecked.png);
+    background-image: url(https://github.com/sakshiii996/pomodoro_timer/blob/main/unchecked.png?raw=true);
     background-position: center;
     background-size: cover;
     height: 25px;
@@ -369,5 +369,6 @@ ul li span {
 ul li span:hover {
     background-color: rgb(98, 132, 180);
 }
+
 
 
